@@ -9,7 +9,7 @@ import NewsManagement from "./Admin/pages/NewsManagement/NewsManagement";
 import Payments from "./Admin/pages/Payments/Payments";
 import PaymentAnalytics from "./Admin/pages/PaymentAnalytics/PaymentAnalytics";
 import SystemHealth from "./Admin/pages/SystemHealth/SystemHealth";
-import Users from "./Admin/pages/Users/Users";
+import Users from "./Admin/pages/Users/Users.jsx";
 
 function App() {
   return (
