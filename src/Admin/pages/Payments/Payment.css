@@ -1,0 +1,177 @@
+/* =========================
+   LAYOUT
+========================= */
+
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.payments-container {
+  flex: 1;
+  padding: 30px;
+}
+
+.payments-header {
+  margin-bottom: 25px;
+}
+
+.payments-header h1 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.payments-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.payments-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.payments-controls select {
+  padding: 10px 15px;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.payments-controls select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(15, 23, 42, 0.08);
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table thead {
+  background: #0f172a;
+}
+
+.payments-table th {
+  color: white;
+  text-align: left;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.payments-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 14px;
+}
+
+.payments-table tbody tr {
+  transition: 0.25s ease;
+}
+
+.payments-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.payments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.confirmed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .payments-container {
+    padding: 20px;
+  }
+
+  .payments-header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .payments-container {
+    padding: 15px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .payments-table {
+    min-width: 700px;
+  }
+
+  .payments-controls {
+    justify-content: stretch;
+  }
+
+  .payments-controls select {
+    width: 100%;
+  }
+}

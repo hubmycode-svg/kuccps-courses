@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Header from "../../components/layout/Header";
 import Sidebar from "../../components/layout/Sidebar";
+import Footer from "../../components/layout/Footer";
 import "./Payment.css";
 
 function Payments() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [payments] = useState([
     { id: 1, email: "othienoi95@gmail.com", amount: 200, status: "confirmed", category: "Degree", date: "2026/06/28" },
     { id: 2, email: "john@gmail.com", amount: 150, status: "pending", category: "Diploma", date: "2026/06/27" },
@@ -26,50 +29,66 @@ function Payments() {
 
   return (
     <div className="dashboard-page">
-      <Header />
+      <Sidebar
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
 
-      <div className="dashboard-body">
-        <Sidebar />
+      <div className="main-content">
+        <Header onMenuClick={() => setIsOpen(true)} />
 
-        <div className="dashboard-content">
-          <h2>Payments</h2>
+        <main className="payments-container">
+          <div className="payments-header">
+            <h1>Payments Management</h1>
+            <p>Manage and monitor all payment transactions.</p>
+          </div>
 
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            <option value="all">All Payments</option>
-            <option value="confirmed">Confirmed</option>
-            <option value="pending">Pending</option>
-            <option value="failed">Failed</option>
-          </select>
+          <div className="payments-controls">
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option value="all">All Payments</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="pending">Pending</option>
+              <option value="failed">Failed</option>
+            </select>
+          </div>
 
-          <table className="payments-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Amount</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {filteredPayments.map((payment) => (
-                <tr key={payment.id}>
-                  <td>{payment.id}</td>
-                  <td>{payment.email}</td>
-                  <td>KES {payment.amount}</td>
-                  <td>{payment.category}</td>
-                  <td>{payment.status}</td>
-                  <td>{payment.date}</td>
+          <div className="table-wrapper">
+            <table className="payments-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Email</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Date</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+
+              <tbody>
+                {filteredPayments.map((payment) => (
+                  <tr key={payment.id}>
+                    <td>{payment.id}</td>
+                    <td>{payment.email}</td>
+                    <td>KES {payment.amount}</td>
+                    <td>{payment.category}</td>
+                    <td>
+                      <span className={`status ${payment.status}`}>
+                        {payment.status}
+                      </span>
+                    </td>
+                    <td>{payment.date}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </main>
+
+        <Footer />
       </div>
     </div>
   );
