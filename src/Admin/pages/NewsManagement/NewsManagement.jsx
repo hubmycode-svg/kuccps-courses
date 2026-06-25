@@ -1,0 +1,9 @@
+
+
+function NewsManagement() {
+    return (
+        <h1>Add new <article></article></h1>
+    )
+}
+
+export default NewsManagement

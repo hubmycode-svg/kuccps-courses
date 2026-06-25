@@ -1,0 +1,32 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 24px;
+
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.logout-btn {
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: white;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
