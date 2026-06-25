@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../context/AuthContext";
 
-import '../layout/Header.css'
+import './Header.css'
 
 function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -11,8 +11,6 @@ function Header() {
 
   function handleLogout() {
     setIsLoggedIn(false);
-
-    localStorage.removeItem("isLoggedIn");
 
     navigate("/admin");
   }

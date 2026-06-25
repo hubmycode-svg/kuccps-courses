@@ -1,32 +1,56 @@
 .admin-header {
+  background: #0f172a;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 16px 24px;
-
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.admin-header h2 {
-  margin: 0;
-  font-size: 1.2rem;
+.header-left h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-name {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .logout-btn {
-  padding: 10px 16px;
-
+  background: linear-gradient(135deg, #2d1b69, #4338ca);
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-
-  background: #dc2626;
-  color: white;
-
-  cursor: pointer;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
 }
 
 .logout-btn:hover {
-  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(67, 56, 202, 0.4);
+  background: linear-gradient(135deg, #4338ca, #5b4df5);
+}
+
+.logout-btn:active {
+  transform: scale(0.96);
+}
+
+.logout-btn:focus {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
 }
