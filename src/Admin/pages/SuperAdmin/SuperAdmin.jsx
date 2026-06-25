@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Header from "../../components/layout/Header";
 import DashboardCard from "../../components/cards/DashboardCard";
-
+import Footer from "../../components/layout/Footer.jsx";
+import Sidebar from "../../components/layout/Sidebar.jsx";
 import "./SuperAdmin.css";
 
 const cards = [
@@ -87,28 +89,39 @@ const cards = [
 ];
 
 function SuperAdmin() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="dashboard-page">
-      <Header />
+      <Sidebar
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
 
-      <main className="dashboard-container">
-        <section className="dashboard-header">
-          <h1>Admin Dashboard</h1>
-          <p>
-            Welcome to the KUCCPS Administration Portal. Manage users,
-            payments, analytics, news, and system operations from one place.
-          </p>
-        </section>
+      <div className="main-content">
+        <Header onMenuClick={() => setIsOpen(true)} />
 
-        <section className="dashboard-grid">
-          {cards.map((card) => (
-            <DashboardCard
-              key={card.path}
-              {...card}
-            />
-          ))}
-        </section>
-      </main>
+        <main className="dashboard-container">
+          <section className="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <p>
+              Welcome to the KUCCPS Administration Portal. Manage users,
+              payments, analytics, news, and system operations from one place.
+            </p>
+          </section>
+
+          <section className="dashboard-grid">
+            {cards.map((card) => (
+              <DashboardCard
+                key={card.path}
+                {...card}
+              />
+            ))}
+          </section>
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 }

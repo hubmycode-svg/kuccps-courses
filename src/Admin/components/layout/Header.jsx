@@ -1,23 +1,30 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { AuthContext } from "../../context/AuthContext";
 
-import './Header.css'
+import "./Header.css";
 
-function Header() {
+function Header({ onMenuClick }) {
   const { setIsLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  function handleLogout() {
+  const handleLogout = () => {
     setIsLoggedIn(false);
-
     navigate("/admin");
-  }
+  };
 
   return (
     <header className="admin-header">
       <div className="header-left">
+        <button
+          type="button"
+          className="menu-btn"
+          onClick={onMenuClick}
+          aria-label="Open sidebar"
+        >
+          ☰
+        </button>
+
         <h2>KUCCPS Admin Portal</h2>
       </div>
 

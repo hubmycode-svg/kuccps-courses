@@ -1,5 +1,5 @@
 
-
+import './Payment.css'
 function Payments() {
     return (
         <h1>Confirm Payments</h1>

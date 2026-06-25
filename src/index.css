@@ -14,11 +14,16 @@
    ROOT LAYOUT
 ========================= */
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -36,12 +41,20 @@ body {
 }
 
 /* =========================
-   IMAGES
+   IMAGES & MEDIA
 ========================= */
 
-img {
-  max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 /* =========================
@@ -62,6 +75,14 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
 }
 
 /* =========================
@@ -86,6 +107,10 @@ h6 {
   font-weight: 600;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 /* =========================
    TABLES
 ========================= */
@@ -96,11 +121,21 @@ table {
 }
 
 /* =========================
+   ACCESSIBILITY
+========================= */
+
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* =========================
    SCROLLBAR
 ========================= */
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -110,4 +145,40 @@ table {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* =========================
+   COMMON CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }

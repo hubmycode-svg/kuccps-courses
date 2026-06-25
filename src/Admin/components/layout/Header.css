@@ -8,11 +8,33 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .header-left h2 {
   color: #ffffff;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .header-right {
@@ -53,4 +75,52 @@
 .logout-btn:focus {
   outline: 2px solid #818cf8;
   outline-offset: 3px;
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 12px 16px;
+  }
+
+  .header-left {
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .header-left h2 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logout-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header {
+    padding: 10px 12px;
+  }
+
+  .header-left h2 {
+    font-size: 1rem;
+  }
+
+  .menu-btn {
+    font-size: 1.3rem;
+    padding: 4px 8px;
+  }
+
+  .logout-btn {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+  }
 }

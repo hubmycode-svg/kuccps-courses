@@ -7,7 +7,7 @@ function DashboardCard({
   buttonText,
   path,
   color,
-  icon,
+  icon = "📋",
 }) {
   return (
     <div
