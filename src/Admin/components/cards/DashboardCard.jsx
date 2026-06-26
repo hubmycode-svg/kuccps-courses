@@ -8,10 +8,11 @@ function DashboardCard({
   path,
   color,
   icon = "📋",
+  disabled = false,
 }) {
   return (
     <div
-      className="dashboard-card"
+      className={`dashboard-card ${disabled ? "disabled" : ""}`}
       style={{ backgroundColor: color }}
     >
       <div className="card-icon">
@@ -22,12 +23,21 @@ function DashboardCard({
 
       <p>{subtitle}</p>
 
-      <Link
-        to={path}
-        className="card-button"
-      >
-        {buttonText}
-      </Link>
+      {disabled ? (
+        <button
+          className="card-button disabled-button"
+          disabled
+        >
+          Coming Soon
+        </button>
+      ) : (
+        <Link
+          to={path}
+          className="card-button"
+        >
+          {buttonText}
+        </Link>
+      )}
     </div>
   );
 }

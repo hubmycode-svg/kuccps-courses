@@ -1,0 +1,199 @@
+/* ===========================
+   SystemHealth.css
+=========================== */
+
+.system-container {
+  padding: 25px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* Header */
+
+.system-header {
+  margin-bottom: 25px;
+}
+
+.system-header h1 {
+  font-size: 2rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+/* Top Cards */
+
+.top-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.status-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.card-title {
+  padding: 18px 22px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+
+.card-title h2 {
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-row strong {
+  color: #111827;
+}
+
+.connected {
+  background: #16a34a;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 5px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* Recent Activities */
+
+.activity-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f3f4f6;
+}
+
+thead th {
+  padding: 16px;
+  text-align: left;
+  color: #111827;
+  border-bottom: 2px solid #d1d5db;
+}
+
+tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr {
+  transition: .3s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Level Badges */
+
+.level {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.degree {
+  background: #2563eb;
+}
+
+.diploma {
+  background: #14b8a6;
+}
+
+.kmtc {
+  background: #f59e0b;
+}
+
+.ttc {
+  background: #7c3aed;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .top-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .system-container {
+    padding: 15px;
+  }
+
+  .system-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .card-title h2 {
+    font-size: 1.25rem;
+  }
+
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .system-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .connected {
+    font-size: .75rem;
+  }
+
+}

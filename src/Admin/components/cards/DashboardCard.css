@@ -54,3 +54,25 @@
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.02);
 }
+/* Disabled card */
+.dashboard-card.disabled {
+  opacity: 0.75;
+  filter: grayscale(20%);
+}
+
+/* Disabled button */
+.disabled-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.disabled-button:hover {
+  transform: none;
+  box-shadow: none;
+}

@@ -4,12 +4,13 @@ import ProtectedRoute from "./Admin/components/ProtectedRoute";
 
 import Login from "./Admin/pages/Login/Login";
 import SuperAdmin from "./Admin/pages/SuperAdmin/SuperAdmin";
-import ManualActivation from "./Admin/pages/ManualActivation/ManualActivation";
+import ManualActivation from "./Admin/pages/ManualActivation/ManualActivation.jsx";
 import NewsManagement from "./Admin/pages/NewsManagement/NewsManagement";
 import Payments from "./Admin/pages/Payments/Payments";
 import PaymentAnalytics from "./Admin/pages/PaymentAnalytics/PaymentAnalytics";
 import SystemHealth from "./Admin/pages/SystemHealth/SystemHealth";
 import Users from "./Admin/pages/Users/Users.jsx";
+import ClearCache from "./Admin/pages/ClearCache/ClearCache.jsx";
 
 function App() {
   return (
@@ -80,6 +81,15 @@ function App() {
         element={
           <ProtectedRoute>
             <Users />
+          </ProtectedRoute>
+        }
+      />
+
+        <Route
+        path="/admin/clear-cache"
+        element={
+          <ProtectedRoute>
+            <ClearCache />
           </ProtectedRoute>
         }
       />

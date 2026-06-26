@@ -1,0 +1,696 @@
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.main-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background:#f8fafc;
+}
+
+/* ==========================================
+   STICKY HEADER
+========================================== */
+
+.manual-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.manual-container{
+    flex:1;
+    padding:30px;
+}
+
+/* ==========================================
+   PAGE TITLE
+========================================== */
+
+.page-title{
+    margin-bottom:30px;
+}
+
+.page-title h1{
+    font-size:2rem;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.page-title p{
+    color:#64748b;
+    line-height:1.7;
+    max-width:700px;
+}
+
+/* ==========================================
+   STATISTICS
+========================================== */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 8px 25px rgba(15,23,42,.08);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+}
+
+.stat-card span{
+    display:block;
+    color:#64748b;
+    margin-bottom:10px;
+}
+
+.stat-card h2{
+    color:#0f172a;
+    font-size:2rem;
+}
+
+.blue{
+    border-left:5px solid #2563eb;
+}
+
+.gray{
+    border-left:5px solid #64748b;
+}
+
+.red{
+    border-left:5px solid #dc2626;
+}
+
+.orange{
+    border-left:5px solid #f59e0b;
+}
+
+/* ==========================================
+   TWO COLUMN GRID
+========================================== */
+
+.manual-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:25px;
+    margin-bottom:30px;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.activation-card,
+.instruction-card{
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(15,23,42,.08);
+    overflow:hidden;
+}
+
+/* ==========================================
+   CARD TITLES
+========================================== */
+
+.card-title{
+    padding:18px 24px;
+    color:#fff;
+}
+
+.card-title.green{
+    background:#16a34a;
+}
+
+.card-title.cyan{
+    background:#0891b2;
+}
+
+.card-title h2{
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/* ==========================================
+   CARD BODY
+========================================== */
+
+.card-body{
+    padding:25px;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+}
+
+.form-group label{
+    font-weight:600;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select{
+
+    padding:12px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+.form-group small{
+
+    color:#64748b;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.activate-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.activate-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   INSTRUCTIONS
+========================================== */
+
+.instruction-body{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+    padding:25px;
+
+}
+
+.instruction-column h3{
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+
+}
+
+.instruction-column ul{
+
+    padding-left:20px;
+
+}
+
+.instruction-column li{
+
+    margin-bottom:10px;
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+/* ==========================================
+   EXAMPLE BOX
+========================================== */
+
+.example-box{
+
+    margin:25px;
+
+    padding:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:12px;
+
+}
+
+.example-box h4{
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+
+}
+
+.example-box p{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+    color:#334155;
+
+}
+
+.example-box small{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   RECENT ACTIVATIONS
+========================================== */
+
+.recent-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(15,23,42,.08);
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.recent-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:22px;
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+.recent-header h2{
+
+    color:#0f172a;
+
+    font-size:1.3rem;
+
+}
+
+.recent-header input{
+
+    width:320px;
+
+    padding:12px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.recent-header input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-container{
+
+    overflow-x:auto;
+
+}
+
+.activation-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.activation-table thead{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.activation-table th{
+
+    padding:16px;
+
+    text-align:left;
+
+    white-space:nowrap;
+
+    font-weight:600;
+
+}
+
+.activation-table td{
+
+    padding:16px;
+
+    border-bottom:1px solid #eef2f7;
+
+    white-space:nowrap;
+
+}
+
+.activation-table tbody tr{
+
+    transition:.25s;
+
+}
+
+.activation-table tbody tr:nth-child(even){
+
+    background:#fafafa;
+
+}
+
+.activation-table tbody tr:hover{
+
+    background:#eff6ff;
+
+}
+
+/* ==========================================
+   RECEIPT
+========================================== */
+
+.receipt{
+
+    background:#f1f5f9;
+
+    color:#0f172a;
+
+    padding:6px 12px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    font-size:13px;
+
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    margin:4px;
+
+}
+
+.badge.free{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.badge.used{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+.badge.none{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.badge.full{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+/* ==========================================
+   CATEGORY LIST
+========================================== */
+
+.category-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+}
+
+/* ==========================================
+   VIEW BUTTON
+========================================== */
+
+.view-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.view-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.empty{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#64748b;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.table-container::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.table-container::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1100px){
+
+.manual-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.manual-container{
+
+padding:20px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.recent-header{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.recent-header input{
+
+width:100%;
+
+}
+
+.activation-table{
+
+min-width:1100px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.manual-container{
+
+padding:15px;
+
+}
+
+.page-title h1{
+
+font-size:1.7rem;
+
+}
+
+.stat-card{
+
+padding:20px;
+
+}
+
+.card-body,
+
+.instruction-body{
+
+padding:20px;
+
+}
+
+}
